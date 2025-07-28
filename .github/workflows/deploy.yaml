@@ -6,8 +6,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
-  steps:
-    - uses: actions/checkout@v4
-    - run: docker build -t react-app -f Dockerfile.dev .
-    - run: docker run -e CI=true react-app npm run test
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t react-app -f Dockerfile.dev .
+      - run: docker run -e CI=true react-app npm run test
