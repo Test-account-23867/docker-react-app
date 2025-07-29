@@ -6,3 +6,9 @@ test('renders React Essentials header', () => {
   const headerElement = screen.getByText(/React Essentials/i);
   expect(headerElement).toBeInTheDocument();
 });
+
+test('renders React Essentials header', () => {
+  render(<App />);
+  const headerElement = screen.getByText(/React Essentials/i);
+  expect(headerElement).toBeInTheDocument();
+});
