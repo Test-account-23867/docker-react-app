@@ -27,17 +27,3 @@ jobs:
           deployment_package: deploy.zip
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-
-on:
-  pull_request:
-    branches:
-      - main
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code, build, run test
-        uses: actions/checkout@v4
-      - run: docker build -t react-app -f Dockerfile.dev .
-      - run: docker run -e CI=true react-app npm run test
